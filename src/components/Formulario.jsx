@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from '@emotion/styled';
-import { obtenerDiferenciaYear } from '../helpers';
+import { obtenerDiferenciaYear, calcularMarca } from '../helpers';
 
 const Campo = styled.div`
     display: flex;
@@ -81,6 +81,8 @@ const Formulario = () => {
          const diferencia = obtenerDiferenciaYear(year);
  
          resultado -= (( diferencia * 3 ) * resultado) / 100;
+
+         resultado = calcularMarca(marca) * resultado;
 
          console.log(resultado);
          
